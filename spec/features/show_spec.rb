@@ -20,4 +20,12 @@ RSpec.describe "Machine show page" do
     expect(page).to_not have_content("White Castle Burger")
     expect(page).to_not have_content("$3.50")
   end
+
+  it "should show average price of items in machine" do
+    mc2 = MachineSnack.create!(snack_id: "#{@snack2.id}", machine_id: "#{@machine1.id}")
+    
+    visit "/machines/#{@machine1.id}"
+
+    expect(page).to have_content("Average Price: $3.00")
+  end
 end

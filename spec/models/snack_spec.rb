@@ -15,4 +15,5 @@ RSpec.describe Snack, type: :model do
       expect(snack1.price_to_dollar).to eq("2.50")
     end
   end
+
 end
