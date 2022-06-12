@@ -21,14 +21,14 @@ RSpec.describe "Snack show page" do
     expect(page).to have_content("Price: $2.50")
   end
 
-  xit "should shoud locations with snack" do
+  it "should shoud locations with snack" do
     visit "/snacks/#{@snack1.id}"
 
     expect(page).to have_content("Don's Mixed Drinks")
     expect(page).to have_content("Turing Basement")
   end
 
-  xit "should show count and average of snacks at each location" do
+  it "should show count and average of snacks at each location" do
     visit "/snacks/#{@snack1.id}"
     expect(page).to have_content("Don's Mixed Drinks (1 kinds of snacks, average price of $2.50)")
     expect(page).to have_content("Turing Basement (1 kinds of snacks, average price of $2.50)")

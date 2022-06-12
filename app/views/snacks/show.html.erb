@@ -1,0 +1,6 @@
+<%= @snack.name %><br>
+Price: $<%= @snack.price_to_dollar %><br>
+Locations <br>
+<% @snack.machines.each do |machine| %>
+<%= machine.location %> (<%= machine.count_snacks %> kinds of snacks, average price of $<%= machine.average_price.to_s.rjust(3, "0").insert(-3, ".") %>)
+<% end %>
